@@ -128,7 +128,6 @@ void lrn_1() {
 	gotoxy(x, y+12); printf("}");
 
 	gotoxy(0, y+20); system("pause");
-
 	system("cls");
 
 	gotoxy(2, 1); textcolor(10); printf("[ 화면에 출력하기 ]");
@@ -138,14 +137,56 @@ void lrn_1() {
 	gotoxy(x, y + 1); printf("printf(\"안녕\\n여러분\"); -> 안녕");
 	gotoxy(x + 27, y + 2); printf("여러분  이 출력된다");
 	gotoxy(x, y + 4); printf("printf(\"Hello\\nWorld\"); -> Hello");
-	gotoxy(x + 27, y + 5); printf("World  가 출력된다");
+	gotoxy(x + 27, y + 5); printf("World   가 출력된다");
 
 	gotoxy(0, y + 20); system("pause");
 	return;
 }
 
 void lrn_2() {
+	int x = 10, y = 6;
 
+	gotoxy(2, 1); textcolor(10); printf("[ 변수에 값 저장하기 ]");
+	gotoxy(2, 2); textcolor(15); printf("= 값을 담을 수 있는 상자");
+
+	gotoxy(x - 8, y); textcolor(10); printf("변수 만들기 : "); textcolor(15);
+	gotoxy(x, y + 1); printf("int box; -> box라는 변수(상자)를 만들었다.");
+	gotoxy(x, y + 2); printf("box = 1; -> box에 1이란 숫자를 저장한다");
+	
+	gotoxy(x - 8, y + 5); textcolor(10); printf("예제 : "); textcolor(15);
+	gotoxy(x, y + 7); printf("#include <stdio.h>");
+	gotoxy(x, y + 8); printf("int main()");
+	gotoxy(x, y + 9); printf("{");
+	gotoxy(x, y + 10); printf("	int box;");
+	gotoxy(x, y + 11); printf("	box = 1;");
+	gotoxy(x, y + 12); printf("return 0;");
+	gotoxy(x, y + 13); printf("}");
+
+	gotoxy(0, y + 20); system("pause");
+	system("cls");
+	char line1[50] = "int로 시작된 변수를 출력할때는 %d를 사용한다.";
+	char line12[20] = "printf(\"%d\", box);";
+
+	gotoxy(2, 1); textcolor(10); printf("[ 변수에 값 저장하기 ]");
+	gotoxy(2, 2); textcolor(15); printf("= 값을 담을 수 있는 상자");
+
+	gotoxy(x - 8, y); textcolor(10); printf("변수에 저장된 값 출력하기 : "); textcolor(15);
+	gotoxy(x, y + 1); printf("%s", line1);
+	
+	gotoxy(x - 8, y + 5); textcolor(10); printf("예제 : "); textcolor(15);
+	gotoxy(x, y + 7); printf("#include <stdio.h>");
+	gotoxy(x, y + 8); printf("int main()");
+	gotoxy(x, y + 9); printf("{");
+	gotoxy(x, y + 10); printf("	int box;");
+	gotoxy(x, y + 11); printf("	box = 1;");
+	gotoxy(x, y + 12); printf("	%s", line12); 
+	gotoxy(x, y + 13); printf("return 0;");
+	gotoxy(x, y + 14); printf("}");
+
+	gotoxy(x, y + 16); printf("= 1 출력.");
+
+	gotoxy(0, y + 20); system("pause");
+	return;
 }
 
 void lrn_3() {
