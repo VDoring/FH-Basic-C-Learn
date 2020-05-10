@@ -76,7 +76,7 @@ int Menu() {
 			}
 			break;
 		case KEY_DOWN:
-			if (y < 10) {
+			if (y < 8) {
 				gotoxy(x - 2, y); printf(" ");
 				y = y + 2;
 				gotoxy(x - 2, y); printf(">");
@@ -116,8 +116,8 @@ void lrn_1() {
 	gotoxy(2,2); textcolor(15); printf("= printf는 화면에 무언가를 출력시켜주는 역할을 한다");
 
 	gotoxy(x - 8, y); textcolor(10); printf("printf 사용법 : "); textcolor(15);
-	gotoxy(x, y+1); printf("printf(\"안녕\"); -> \"안녕\"이 출력된다");
-	gotoxy(x, y+2); printf("printf(\"Hello\"); -> \"Hello\"가 출력된다");
+	gotoxy(x, y+1); printf("printf(\"안녕\"); -> 안녕 이 출력된다");
+	gotoxy(x, y+2); printf("printf(\"Hello\"); -> Hello 가 출력된다");
 
 	gotoxy(x - 8, y+5); textcolor(10); printf("써야하는 곳 : "); textcolor(15);
 	gotoxy(x, y+7); printf("#include <stdio.h>");
@@ -190,5 +190,34 @@ void lrn_2() {
 }
 
 void lrn_3() {
+	int x = 10, y = 6;
 
+	gotoxy(2, 1); textcolor(10); printf("[ 간편하게 코드 여러번 실행시키기 ]");
+	gotoxy(2, 2); textcolor(15); printf("= 반복문은 무언가를 반복시킨다");
+
+	gotoxy(x - 8, y); textcolor(10); printf("for 반복문 기본 구성 : "); textcolor(15);
+	gotoxy(x, y + 1); printf("for(int i = 0; i < 3; i++)");
+	gotoxy(x, y + 2); printf("    초기식     조건식   변화식");
+	gotoxy(x, y + 2); printf("초기식: 반복문 시작시 사용.");
+	gotoxy(x, y + 3); printf("조건식: 반복될 조건. 거짓이 될시 반복문을 종료.");
+	gotoxy(x, y + 4); printf("변화식: 반복문이 한번 실행될 때마다 수행할 식");
+
+	gotoxy(x - 8, y + 7); textcolor(10); printf("예제 : "); textcolor(15);
+	gotoxy(x, y + 8); printf("#include <stdio.h>");
+	gotoxy(x, y + 9); printf("int main()");
+	gotoxy(x, y + 10); printf("{");
+	gotoxy(x, y + 11); printf("	for(int i = 0; i < 3; i++)");
+	gotoxy(x, y + 12); printf("	{");
+	gotoxy(x, y + 13); printf("	    printf(\"Hello\\n\")");
+	gotoxy(x, y + 14); printf("	}");
+	gotoxy(x, y + 15); printf("return 0;");
+	gotoxy(x, y + 16); printf("}");
+
+	gotoxy(x, y + 18); printf("= Hello");
+	gotoxy(x, y + 19); printf("  Hello");
+	gotoxy(x, y + 20); printf("  Hello");
+	gotoxy(x, y + 21); printf("출력.");
+
+	gotoxy(0, y + 23); system("pause");
+	return;
 }
