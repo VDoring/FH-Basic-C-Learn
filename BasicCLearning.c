@@ -15,7 +15,7 @@ int keyControl(); //메뉴에서 입력한 키보드키 반환
 void lrn_1(); //1. 화면에 출력하는 방법
 void lrn_2(); //2. 변수(상자)에 값 넣는 방법
 void lrn_3(); //3. 코드를 여러번 쉽게 실행시키는 방법
-void lrn_4(); //4. 편리한 기호들 사용하는 방법
+void lrn_4(); //4. 기호들 소개/사용 방법
 
 
 //글자위치 조정 함수
@@ -60,6 +60,9 @@ int main() {
 		case 3:
 			lrn_3();
 			break;
+		case 4:
+			lrn_4();
+			break;
 		}
 
 	}
@@ -77,6 +80,7 @@ int Menu() {
 	gotoxy(x - 3, y); textcolor(15); printf("▶ 1. 화면에 출력하는 방법");
 	gotoxy(x, y + 2); textcolor(15); printf("2. 변수(상자)에 값 넣는 방법");
 	gotoxy(x, y + 4); textcolor(15); printf("3. 코드를 여러번 쉽게 실행시키는 방법");
+	gotoxy(x, y + 6); textcolor(15); printf("4. 기호들 소개 및 사용 방법");
 
 	while (1) {
 		keynum = keyControl();
@@ -91,7 +95,7 @@ int Menu() {
 			}
 			break;
 		case KEY_DOWN:
-			if (y < 8) {
+			if (y < 10) {
 				gotoxy(x - 3, y); printf(" ");
 				y = y + 2;
 				gotoxy(x - 3, y); printf("▶");
@@ -181,8 +185,8 @@ void lrn_2() {
 
 	gotoxy(0, y + 20); system("pause");
 	system("cls");
-	char line1[50] = "int로 시작된 변수를 출력할때는 %d를 사용한다.";
-	char line12[20] = "printf(\"%d\", box);";
+	char line1[] = "int로 시작된 변수를 출력할때는 %d를 사용한다.";
+	char line12[] = "printf(\"%d\", box);";
 
 	gotoxy(2, 1); textcolor(10); printf("[ 변수에 값 저장하기 ]");
 	gotoxy(2, 2); textcolor(15); printf("= 변수는 값을 담을 수 있는 상자이다");
@@ -201,6 +205,31 @@ void lrn_2() {
 	gotoxy(x, y + 14); printf("}");
 
 	gotoxy(x, y + 16); printf("= 1 출력.");
+
+	gotoxy(0, y + 20); system("pause");
+	system("cls");
+
+	gotoxy(2, 1); textcolor(10); printf("[ 변수에 값 저장하기 ]");
+	gotoxy(2, 2); textcolor(15); printf("= 변수는 값을 담을 수 있는 상자이다");
+
+	gotoxy(x - 8, y); textcolor(10); printf("다른 타입의 상자들 살펴보기 : "); textcolor(15);
+	char line1_[] = "char로 시작된 변수는 %c(단일문자) 또는 %s를 사용한다.";
+	char line4[] = "float로 시작된 변수는 %f를 사용한다.";
+	gotoxy(x, y + 1); printf("char 은 문자를 저장한다. %s", line1_);
+	gotoxy(x, y + 2); printf("ex) A, b, Hello, weather 등");
+	gotoxy(x, y + 4); printf("float 은 소수를 저장한다. %s", line4);
+	gotoxy(x, y + 5); printf("ex) 3.14, 2.1, 5.5543 등");
+
+	gotoxy(x - 8, y + 8); textcolor(10); printf("예제 : "); textcolor(15);
+	char line10[] = "printf(\"%c\", text);";
+	char line14[] = "printf(\"%s\", longtext);";
+	char line17[] = "printf(\"%f\", pi);";
+	gotoxy(x, y + 10); printf("char text = 'a';");
+	gotoxy(x, y + 11); printf("%s //a 출력", line10);
+	gotoxy(x, y + 13); printf("char longtext[] = \"arrow\";");
+	gotoxy(x, y + 14); printf("%s //arrow 출력", line14);
+	gotoxy(x, y + 16); printf("float pi = 3.14;");
+	gotoxy(x, y + 17); printf("%s //3.14 출력", line17);
 
 	gotoxy(0, y + 20); system("pause");
 	return;
@@ -242,5 +271,14 @@ void lrn_3() {
 }
 
 void lrn_4() {
+	int x = 10, y = 6;
 
+	gotoxy(2, 1); textcolor(10); printf("[ 기호를 사용하기 ]");
+	gotoxy(2, 2); textcolor(15); printf("= 연산자는 무언가를 연산한다");
+
+	gotoxy(x - 8, y); textcolor(10); printf("연산자 소개 : "); textcolor(15);
+	gotoxy(x, y + 2); printf("https://studyc.tistory.com/5");
+
+	gotoxy(0, y + 20); system("pause");
+	return;
 }
